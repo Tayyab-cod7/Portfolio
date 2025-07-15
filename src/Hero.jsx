@@ -36,7 +36,11 @@ const socials = [
   { icon: <FaEnvelope />, url: "mailto:your@email.com", label: "Email" },
 ];
 
-const typewriterWords = ["Frontend Developer", "Backend Developer", "Full Stack Developer"];
+const typewriterWords = [
+  "Frontend Developer",
+  "Backend Developer",
+  "Full Stack Developer",
+];
 
 export default function Hero() {
   const [wordIdx, setWordIdx] = React.useState(0);
@@ -70,7 +74,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      aria-label="Hero section introducing John Doe, Frontend Developer"
+      aria-label="Hero section introducing M.Tayyab"
       className="relative min-h-[70vh] flex flex-col-reverse md:flex-row items-center justify-center px-4 sm:px-6 md:px-12 pt-8 md:pt-4 gap-10 md:gap-0 bg-gradient-to-br from-white via-gray-100 to-blue-100 dark:from-[#0f0f0f] dark:via-[#121212] dark:to-[#1a1a1a] transition-colors duration-500 overflow-x-hidden"
     >
       {/* Left: Text */}
@@ -83,6 +87,7 @@ export default function Hero() {
         >
           Hi, I'm <span className="text-blue-600 dark:text-blue-400">M.Tayyab</span>
         </motion.h1>
+
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -94,6 +99,7 @@ export default function Hero() {
             <span className="animate-pulse">|</span>
           </span>
         </motion.div>
+
         <motion.p
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -102,11 +108,17 @@ export default function Hero() {
         >
           I build modern, responsive, and user-friendly web experiences.
         </motion.p>
-        {/* CTA Buttons */}
+
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8, type: "spring", bounce: 0.3 }}
+          transition={{
+            delay: 0.7,
+            duration: 0.8,
+            type: "spring",
+            bounce: 0.3,
+          }}
           className="flex mt-6 sm:mt-8 w-full sm:w-auto justify-center md:justify-start"
         >
           <a
@@ -117,23 +129,41 @@ export default function Hero() {
             Contact Me
           </a>
         </motion.div>
+
+        {/* Social Media Icons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.1, duration: 0.6 }}
+          className="flex gap-6 mt-6 text-2xl text-gray-500 dark:text-gray-400"
+        >
+          {socials.map((social, index) => (
+            <a
+              key={index}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
+            >
+              {social.icon}
+            </a>
+          ))}
+        </motion.div>
       </div>
 
-      {/* Right: Perfectly Centered Image in Blob */}
+      {/* Right: Centered Image inside Blob */}
       <div className="relative flex-1 flex justify-center md:justify-end items-center z-0 w-full md:w-auto mb-8 md:mb-0">
-        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
-          {/* Centered blob and image */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Blob />
-            <motion.img
-              src="/Me.png"
-              alt="John Doe profile"
-              initial={{ y: -700, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1.2, duration: 2.2, type: 'spring', bounce: 0.08 }}
-              className="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full object-cover z-10"
-            />
-          </div>
+        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 flex items-center justify-center">
+          <Blob />
+          <motion.img
+            src="/Me.png"
+            alt="M.Tayyab profile image"
+            initial={{ y: -700, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1.2, duration: 2.2, type: "spring", bounce: 0.08 }}
+            className="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full object-cover z-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+          />
         </div>
       </div>
     </section>
