@@ -153,19 +153,21 @@ export default function Hero() {
       </div>
 
       {/* Right: Centered Image inside Blob */}
-      <div className="relative flex-1 flex justify-center md:justify-end items-center z-0 w-full md:w-auto mb-8 md:mb-0">
-        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 flex items-center justify-center">
-          <Blob />
-          <motion.img
-            src="/Me.png"
-            alt="M.Tayyab profile image"
-            initial={{ y: -700, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1.2, duration: 2.2, type: "spring", bounce: 0.08 }}
-            className="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full object-cover z-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          />
-        </div>
-      </div>
+    {/* Right: Centered Image inside Blob */}
+<div className="relative flex-1 flex justify-center items-center z-0 w-full md:w-auto mb-8 md:mb-0">
+  <div className="relative w-[320px] h-[320px] sm:w-[360px] sm:h-[360px] md:w-[400px] md:h-[400px]">
+    <Blob />
+    <motion.img
+      src="/Me.png"
+      alt="M.Tayyab profile"
+      initial={{ y: -700, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 1.2, duration: 2.2, type: "spring", bounce: 0.08 }}
+      className="absolute inset-0 m-auto w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full object-cover z-10"
+    />
+  </div>
+</div>
+
     </section>
   );
 }
