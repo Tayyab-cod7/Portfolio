@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaFigma, FaGithub, FaCode } from "react-icons/fa";
-import { SiTailwindcss, SiMongodb, SiRedux, SiExpress, SiTypescript } from "react-icons/si";
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaFigma, FaGithub, FaCode , FaWordpress } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb, SiRedux, SiExpress, SiTypescript, SiBootstrap } from "react-icons/si";
 
 const skillCategories = [
   {
@@ -12,8 +12,7 @@ const skillCategories = [
       { icon: <FaJs />, name: "JavaScript", desc: "Programming language of the web", level: 92 },
       { icon: <FaReact />, name: "React", desc: "UI library for building interfaces", level: 88 },
       { icon: <SiTailwindcss />, name: "Tailwind CSS", desc: "Utility-first CSS framework", level: 85 },
-      { icon: <SiRedux />, name: "Redux", desc: "State management for React", level: 80 },
-      { icon: <SiTypescript />, name: "TypeScript", desc: "Typed superset of JavaScript", level: 75 },
+      { icon: <SiBootstrap />, name: "Bootstrap", desc: "Frontend CSS framework", level: 85 },
     ],
   },
   {
@@ -31,6 +30,7 @@ const skillCategories = [
       { icon: <FaGithub />, name: "GitHub", desc: "Code hosting platform", level: 85 },
       { icon: <FaCode />, name: "VS Code", desc: "Code editor", level: 90 },
       { icon: <FaFigma />, name: "Figma", desc: "UI/UX design tool", level: 70 },
+      { icon: <FaWordpress />, name: "WordPress", desc: "Content management system", level: 75 },
     ],
   },
 ];

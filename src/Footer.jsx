@@ -3,15 +3,9 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const socials = [
-  {
-    icon: <FaGithub />, url: "https://github.com/", label: "GitHub"
-  },
-  {
-    icon: <FaLinkedin />, url: "https://linkedin.com/", label: "LinkedIn"
-  },
-  {
-    icon: <FaEnvelope />, url: "mailto:your@email.com", label: "Email"
-  },
+  { icon: <FaGithub />, url: "https://github.com/Tayyab-cod7", label: "GitHub" },
+  { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/muhammad-tayyab-611907376", label: "LinkedIn" },
+  { icon: <FaEnvelope />, url: "mailto:stackcraft.com@gmail.com", label: "Email" },
 ];
 
 export default function Footer() {
@@ -55,9 +49,9 @@ export default function Footer() {
             transition={{ type: "spring", stiffness: 300 }}
             className="font-semibold text-xl md:text-2xl text-gray-800 dark:text-gray-300 transition-all duration-300 ease-in-out cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:rotate-1"
           >
-            MyPortfolio
+            StackCraft Portfolio
           </motion.span>
-          <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-1">Designed & Built by MyPortfolio</span>
+          <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-1">Designed & Built by StackCraft Portfolio</span>
         </motion.div>
         {/* Center: Empty for spacing on md+ */}
         <div className="hidden md:block" />
@@ -91,7 +85,7 @@ export default function Footer() {
       <div className="border-t border-gray-300 dark:border-gray-700 mt-8 pt-4" />
       {/* Copyright */}
       <div className="flex flex-col items-center justify-center mt-2">
-        <span className="text-sm text-gray-500 dark:text-gray-400 text-center">© 2025 MyPortfolio. All rights reserved.</span>
+        <span className="text-sm text-gray-500 dark:text-gray-400 text-center">© 2025 StackCraft Portfolio. All rights reserved.</span>
       </div>
     </motion.footer>
   );

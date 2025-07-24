@@ -8,8 +8,9 @@ const projects = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
     tech: ["React", "Tailwind", "Framer Motion"],
     desc: "A modern, animated portfolio website to showcase my work and skills.",
-    github: "https://github.com/",
-    demo: "https://your-portfolio.com",
+    github: "https://github.com/Tayyab-cod7/Portfolio.git",
+    demo: "https://tayyabs-portfolios.netlify.app",
+    showGithub: true
   },
   {
     title: "E-commerce App",
@@ -18,15 +19,8 @@ const projects = [
     desc: "A full-featured e-commerce application with cart, checkout, and admin dashboard.",
     github: "https://github.com/",
     demo: "https://ecommerce-demo.com",
-  },
-  {
-    title: "Chat App",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-    tech: ["React", "Socket.io", "Node.js"],
-    desc: "A real-time chat application with rooms, emojis, and notifications.",
-    github: "https://github.com/",
-    demo: "https://chat-demo.com",
-  },
+    showGithub: false
+  }
 ];
 
 const cardVariants = {
@@ -53,8 +47,7 @@ export default function Projects() {
   // ✅ Hooks called directly, not inside any loop or callback
   const anim1 = useAnimation();
   const anim2 = useAnimation();
-  const anim3 = useAnimation();
-  const animations = [anim1, anim2, anim3];
+  const animations = [anim1, anim2];
 
   const handleMouseMove = (e, controls) => {
     const card = e.currentTarget;
@@ -145,7 +138,7 @@ export default function Projects() {
         Projects
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto relative z-10">
         {projects.map((proj, i) => {
           const controls = animations[i];
           return (
@@ -158,7 +151,7 @@ export default function Projects() {
               animate={controls}
               onMouseMove={(e) => handleMouseMove(e, controls)}
               onMouseLeave={() => handleMouseLeave(controls)}
-              className="bg-white/80 dark:bg-[#232946]/80 rounded-xl shadow-md border-2 border-transparent hover:border-blue-500 transition-all p-4 flex flex-col group hover:shadow-xl focus-within:border-blue-500 backdrop-blur-md relative overflow-hidden cursor-pointer"
+              className="bg-white/80 dark:bg-[#232946]/80 rounded-xl shadow-md border-2 border-transparent hover:border-blue-500 transition-all p-6 flex flex-col group hover:shadow-xl focus-within:border-blue-500 backdrop-blur-md relative overflow-hidden cursor-pointer"
               tabIndex={0}
               aria-label={proj.title + " project"}
               style={{ willChange: "transform" }}
@@ -174,11 +167,11 @@ export default function Projects() {
                   filter: "blur(8px)",
                 }}
               />
-              <div className="overflow-hidden rounded-md mb-4 relative z-10">
+              <div className="overflow-hidden rounded-lg mb-6 relative z-10">
                 <img
                   src={proj.image}
                   alt={proj.title}
-                  className="w-full h-48 object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-56 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                   onClick={() => setModal(proj)}
                   style={{ cursor: "zoom-in" }}
@@ -220,15 +213,17 @@ export default function Projects() {
                 >
                   <FaExternalLinkAlt /> Live Demo
                 </a>
-                <a
-                  href={proj.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 px-4 py-2 rounded border-2 border-blue-600 text-blue-600 font-semibold bg-transparent hover:bg-blue-600 hover:text-white transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  aria-label="View Code on GitHub"
-                >
-                  <FaGithub /> View Code
-                </a>
+                {proj.showGithub && (
+                  <a
+                    href={proj.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 px-4 py-2 rounded border-2 border-blue-600 text-blue-600 font-semibold bg-transparent hover:bg-blue-600 hover:text-white transition-all duration-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    aria-label="View Code on GitHub"
+                  >
+                    <FaGithub /> View Code
+                  </a>
+                )}
               </div>
             </motion.div>
           );

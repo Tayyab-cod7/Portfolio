@@ -31,9 +31,9 @@ const Blob = () => (
 );
 
 const socials = [
-  { icon: <FaGithub />, url: "https://github.com/", label: "GitHub" },
-  { icon: <FaLinkedin />, url: "https://linkedin.com/", label: "LinkedIn" },
-  { icon: <FaEnvelope />, url: "mailto:your@email.com", label: "Email" },
+  { icon: <FaGithub />, url: "https://github.com/Tayyab-cod7", label: "GitHub" },
+  { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/muhammad-tayyab-611907376", label: "LinkedIn" },
+  { icon: <FaEnvelope />, url: "mailto:stackcraft.com@gmail.com", label: "Email" },
 ];
 
 const typewriterWords = [

@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { FaDownload } from "react-icons/fa";
 
 const highlights = [
-  { icon: "🚀", text: "2+ years of experience" },
+  { icon: "🚀", text: "1+ years of experience" },
   { icon: "🌐", text: "Built 10+ websites" },
-  { icon: "💡", text: "Passionate about UI/UX" },
+  { icon: "💡", text: "Passionate about Coding/Designing" },
 ];
 
 const sectionGradient = "bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-[#181c2a] dark:via-[#232946] dark:to-[#1a1a2e]";
@@ -75,7 +75,7 @@ export default function About() {
       >
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">About Me</h2>
         <p className="text-md md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl">
-          I’m a Full Stack Developer with a passion for creating clean, modern UI experiences. I love building interactive, user-friendly web apps and am always exploring new technologies. Currently, I’m focused on mastering React and learning more about design systems.
+          I’m a Full Stack Developer with a passion for creating clean, modern UI experiences. I love building interactive, user-friendly web apps and am always exploring new technologies. Currently, I’m focused on making people's life easier and more efficient by building web apps.
         </p>
         {/* Highlights with staggered animation */}
         <motion.ul
@@ -109,7 +109,9 @@ export default function About() {
         {/* Resume Button with Icon and Bounce */}
         <div className="relative group mt-2">
           <motion.a
-            href="#"
+            href="/Resume.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded shadow-md transition font-semibold flex items-center gap-2 text-lg ${isBouncing ? 'animate-bounce' : ''}`}
             aria-label="See My Resume"
             tabIndex={0}

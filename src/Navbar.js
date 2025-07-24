@@ -116,7 +116,7 @@ export default function Navbar() {
             className="font-bold text-2xl cursor-pointer text-gray-900 dark:text-white select-none"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            MyPortfolio
+            StackCraft Portfolio
           </motion.div>
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-2 lg:gap-4">
